@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501766D5BC9D4145282BFEA3 /* Pods_AuthApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B27C17C898C86B961CBD32 /* Pods_AuthApp.framework */; };
+		5E0A72132DE6FCB9000C0303 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5E0A72122DE6FCB9000C0303 /* FacebookCore */; };
+		5E0A72202DE6FFBF000C0303 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 5E0A721F2DE6FFBF000C0303 /* FacebookLogin */; };
+		5E0A72252DE714CD000C0303 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E0A72242DE714CD000C0303 /* GoogleService-Info.plist */; };
 		5EC5B10F2DE60FB5004AA89A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5B10E2DE60FB5004AA89A /* AppDelegate.swift */; };
 		5EC5B1112DE60FB5004AA89A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5B1102DE60FB5004AA89A /* SceneDelegate.swift */; };
 		5EC5B1132DE60FB5004AA89A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5B1122DE60FB5004AA89A /* ViewController.swift */; };
@@ -16,9 +20,6 @@
 		5EC5B11E2DE60FB7004AA89A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC5B11C2DE60FB7004AA89A /* LaunchScreen.storyboard */; };
 		5EC5B1262DE62349004AA89A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5B1252DE62349004AA89A /* SignUpViewController.swift */; };
 		5EC5B12B2DE6340D004AA89A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5EC5B12A2DE6340D004AA89A /* FirebaseAuth */; settings = {ATTRIBUTES = (Required, ); }; };
-		5EC5B12C2DE6344E004AA89A /* Pods_AuthApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652AE72F8E00AA8899C7F45A /* Pods_AuthApp.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		5EC5B12D2DE6344E004AA89A /* Pods_AuthApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 652AE72F8E00AA8899C7F45A /* Pods_AuthApp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5EC5B1342DE646AC004AA89A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EC5B1332DE646AC004AA89A /* GoogleService-Info.plist */; };
 		5EC5B1382DE6493B004AA89A /* GitHubRepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5B1372DE6493B004AA89A /* GitHubRepositoriesViewController.swift */; };
 		5EC5B13A2DE64D12004AA89A /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5B1392DE64D12004AA89A /* RepositoryModel.swift */; };
 		5EC5B13C2DE64D45004AA89A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5B13B2DE64D45004AA89A /* Extension.swift */; };
@@ -27,13 +28,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5EC5B12E2DE6344E004AA89A /* Embed Frameworks */ = {
+		5E0A721E2DE6FF35000C0303 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5EC5B12D2DE6344E004AA89A /* Pods_AuthApp.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,8 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		03CEB0E08683B3CB0907DA20 /* Pods-AuthApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthApp.release.xcconfig"; path = "Target Support Files/Pods-AuthApp/Pods-AuthApp.release.xcconfig"; sourceTree = "<group>"; };
-		3912BE9A32E7089447CD5D0A /* Pods-AuthApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthApp.debug.xcconfig"; path = "Target Support Files/Pods-AuthApp/Pods-AuthApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5E0A72242DE714CD000C0303 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5EC5B10B2DE60FB5004AA89A /* AuthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EC5B10E2DE60FB5004AA89A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EC5B1102DE60FB5004AA89A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,13 +52,14 @@
 		5EC5B11D2DE60FB7004AA89A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EC5B11F2DE60FB7004AA89A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EC5B1252DE62349004AA89A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		5EC5B1332DE646AC004AA89A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5EC5B1372DE6493B004AA89A /* GitHubRepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoriesViewController.swift; sourceTree = "<group>"; };
 		5EC5B1392DE64D12004AA89A /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		5EC5B13B2DE64D45004AA89A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5EC5B13D2DE64F7A004AA89A /* GitHubRepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepositoriesViewModel.swift; sourceTree = "<group>"; };
 		5EC5B1442DE65B42004AA89A /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
-		652AE72F8E00AA8899C7F45A /* Pods_AuthApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73313FB66EBC507DA7806D20 /* Pods-AuthApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthApp.debug.xcconfig"; path = "Target Support Files/Pods-AuthApp/Pods-AuthApp.debug.xcconfig"; sourceTree = "<group>"; };
+		82B27C17C898C86B961CBD32 /* Pods_AuthApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8858AAC78543059C2EBF78BF /* Pods-AuthApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthApp.release.xcconfig"; path = "Target Support Files/Pods-AuthApp/Pods-AuthApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,21 +67,84 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EC5B12C2DE6344E004AA89A /* Pods_AuthApp.framework in Frameworks */,
+				5E0A72132DE6FCB9000C0303 /* FacebookCore in Frameworks */,
+				5E0A72202DE6FFBF000C0303 /* FacebookLogin in Frameworks */,
 				5EC5B12B2DE6340D004AA89A /* FirebaseAuth in Frameworks */,
+				501766D5BC9D4145282BFEA3 /* Pods_AuthApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		075B005DA22621B17B687583 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82B27C17C898C86B961CBD32 /* Pods_AuthApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4217902828FDC45878218A62 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3912BE9A32E7089447CD5D0A /* Pods-AuthApp.debug.xcconfig */,
-				03CEB0E08683B3CB0907DA20 /* Pods-AuthApp.release.xcconfig */,
+				73313FB66EBC507DA7806D20 /* Pods-AuthApp.debug.xcconfig */,
+				8858AAC78543059C2EBF78BF /* Pods-AuthApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5E0A72262DE7A361000C0303 /* RepositoriesViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5EC5B1372DE6493B004AA89A /* GitHubRepositoriesViewController.swift */,
+				5EC5B13D2DE64F7A004AA89A /* GitHubRepositoriesViewModel.swift */,
+				5EC5B1442DE65B42004AA89A /* GitHubService.swift */,
+			);
+			path = RepositoriesViewControllers;
+			sourceTree = "<group>";
+		};
+		5E0A72272DE7A37F000C0303 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				5EC5B1102DE60FB5004AA89A /* SceneDelegate.swift */,
+				5EC5B10E2DE60FB5004AA89A /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		5E0A72282DE7A39A000C0303 /* MainViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5EC5B1252DE62349004AA89A /* SignUpViewController.swift */,
+				5EC5B1122DE60FB5004AA89A /* ViewController.swift */,
+			);
+			path = MainViewControllers;
+			sourceTree = "<group>";
+		};
+		5E0A72292DE7A3DB000C0303 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5EC5B1392DE64D12004AA89A /* RepositoryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5E0A722A2DE7A3E9000C0303 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5EC5B11C2DE60FB7004AA89A /* LaunchScreen.storyboard */,
+				5EC5B1142DE60FB5004AA89A /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5E0A722B2DE7A3F7000C0303 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5EC5B13B2DE64D45004AA89A /* Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		5EC5B1022DE60FB5004AA89A = {
@@ -90,7 +153,7 @@
 				5EC5B10D2DE60FB5004AA89A /* AuthApp */,
 				5EC5B10C2DE60FB5004AA89A /* Products */,
 				4217902828FDC45878218A62 /* Pods */,
-				798029BDCCAAA56A6AE422DD /* Frameworks */,
+				075B005DA22621B17B687583 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,31 +168,18 @@
 		5EC5B10D2DE60FB5004AA89A /* AuthApp */ = {
 			isa = PBXGroup;
 			children = (
-				5EC5B1332DE646AC004AA89A /* GoogleService-Info.plist */,
-				5EC5B1372DE6493B004AA89A /* GitHubRepositoriesViewController.swift */,
-				5EC5B13D2DE64F7A004AA89A /* GitHubRepositoriesViewModel.swift */,
-				5EC5B1442DE65B42004AA89A /* GitHubService.swift */,
-				5EC5B13B2DE64D45004AA89A /* Extension.swift */,
-				5EC5B10E2DE60FB5004AA89A /* AppDelegate.swift */,
-				5EC5B1102DE60FB5004AA89A /* SceneDelegate.swift */,
-				5EC5B1122DE60FB5004AA89A /* ViewController.swift */,
-				5EC5B1392DE64D12004AA89A /* RepositoryModel.swift */,
-				5EC5B1252DE62349004AA89A /* SignUpViewController.swift */,
-				5EC5B1142DE60FB5004AA89A /* Main.storyboard */,
-				5EC5B11C2DE60FB7004AA89A /* LaunchScreen.storyboard */,
+				5E0A72282DE7A39A000C0303 /* MainViewControllers */,
+				5E0A72262DE7A361000C0303 /* RepositoriesViewControllers */,
+				5E0A722A2DE7A3E9000C0303 /* Views */,
+				5E0A722B2DE7A3F7000C0303 /* Extension */,
+				5E0A72292DE7A3DB000C0303 /* Models */,
+				5E0A72272DE7A37F000C0303 /* Delegates */,
 				5EC5B11A2DE60FB7004AA89A /* Assets.xcassets */,
 				5EC5B11F2DE60FB7004AA89A /* Info.plist */,
+				5E0A72242DE714CD000C0303 /* GoogleService-Info.plist */,
 				5EC5B1172DE60FB5004AA89A /* AuthApp.xcdatamodeld */,
 			);
 			path = AuthApp;
-			sourceTree = "<group>";
-		};
-		798029BDCCAAA56A6AE422DD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				652AE72F8E00AA8899C7F45A /* Pods_AuthApp.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,12 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5EC5B1222DE60FB7004AA89A /* Build configuration list for PBXNativeTarget "AuthApp" */;
 			buildPhases = (
-				BD5CAFB32A81EC381DD3B6CA /* [CP] Check Pods Manifest.lock */,
+				9125F59D639256481C12EA05 /* [CP] Check Pods Manifest.lock */,
 				5EC5B1072DE60FB5004AA89A /* Sources */,
 				5EC5B1082DE60FB5004AA89A /* Frameworks */,
 				5EC5B1092DE60FB5004AA89A /* Resources */,
-				5EC5B12E2DE6344E004AA89A /* Embed Frameworks */,
-				9907A4572D001D1C77956F72 /* [CP] Embed Pods Frameworks */,
+				5E0A721E2DE6FF35000C0303 /* Embed Frameworks */,
+				91E9572CF0C1C07AC511A57C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,6 +203,8 @@
 			name = AuthApp;
 			packageProductDependencies = (
 				5EC5B12A2DE6340D004AA89A /* FirebaseAuth */,
+				5E0A72122DE6FCB9000C0303 /* FacebookCore */,
+				5E0A721F2DE6FFBF000C0303 /* FacebookLogin */,
 			);
 			productName = AuthApp;
 			productReference = 5EC5B10B2DE60FB5004AA89A /* AuthApp.app */;
@@ -184,6 +236,8 @@
 			mainGroup = 5EC5B1022DE60FB5004AA89A;
 			packageReferences = (
 				5EC5B1292DE62900004AA89A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5E0A720D2DE6FCB8000C0303 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				5E0A72212DE704C9000C0303 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 5EC5B10C2DE60FB5004AA89A /* Products */;
 			projectDirPath = "";
@@ -200,7 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EC5B11E2DE60FB7004AA89A /* LaunchScreen.storyboard in Resources */,
-				5EC5B1342DE646AC004AA89A /* GoogleService-Info.plist in Resources */,
+				5E0A72252DE714CD000C0303 /* GoogleService-Info.plist in Resources */,
 				5EC5B11B2DE60FB7004AA89A /* Assets.xcassets in Resources */,
 				5EC5B1162DE60FB5004AA89A /* Main.storyboard in Resources */,
 			);
@@ -209,24 +263,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9907A4572D001D1C77956F72 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AuthApp/Pods-AuthApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AuthApp/Pods-AuthApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AuthApp/Pods-AuthApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BD5CAFB32A81EC381DD3B6CA /* [CP] Check Pods Manifest.lock */ = {
+		9125F59D639256481C12EA05 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,6 +283,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91E9572CF0C1C07AC511A57C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuthApp/Pods-AuthApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuthApp/Pods-AuthApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AuthApp/Pods-AuthApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -406,7 +460,7 @@
 		};
 		5EC5B1232DE60FB7004AA89A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3912BE9A32E7089447CD5D0A /* Pods-AuthApp.debug.xcconfig */;
+			baseConfigurationReference = 73313FB66EBC507DA7806D20 /* Pods-AuthApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -435,7 +489,7 @@
 		};
 		5EC5B1242DE60FB7004AA89A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03CEB0E08683B3CB0907DA20 /* Pods-AuthApp.release.xcconfig */;
+			baseConfigurationReference = 8858AAC78543059C2EBF78BF /* Pods-AuthApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -486,6 +540,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5E0A720D2DE6FCB8000C0303 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.0;
+			};
+		};
+		5E0A72212DE704C9000C0303 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		5EC5B1292DE62900004AA89A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -497,6 +567,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5E0A72122DE6FCB9000C0303 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E0A720D2DE6FCB8000C0303 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		5E0A721F2DE6FFBF000C0303 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E0A720D2DE6FCB8000C0303 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
 		5EC5B12A2DE6340D004AA89A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5EC5B1292DE62900004AA89A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

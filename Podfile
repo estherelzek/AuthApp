@@ -5,6 +5,7 @@ target 'AuthApp' do
   use_frameworks!
 
   pod 'Alamofire' # or other pods you're using
+  pod 'GoogleSignIn', '~> 7.0'
 end
 
 
