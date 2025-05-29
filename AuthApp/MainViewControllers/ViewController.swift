@@ -78,7 +78,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func facebookButtonTapped(_ sender: Any) {
-        
+        if let accessToken = AccessToken.current {
+            // User is already logged in to Facebook, use existing token
+            print("Using existing Facebook session")
+            firebaseFacebookLogin(with: accessToken.tokenString)
+        } else {
+            // Prompt user to log in
             let loginManager = LoginManager()
             loginManager.logIn(permissions: ["email"], from: self) { result, error in
                 if let error = error {
@@ -86,27 +91,16 @@ class ViewController: UIViewController {
                     return
                 }
 
-                guard let accessToken = AccessToken.current?.tokenString else {
+                guard let tokenString = AccessToken.current?.tokenString else {
                     print("No Facebook access token")
                     return
                 }
 
-                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken)
-                Auth.auth().signIn(with: credential) { authResult, error in
-                    if let error = error {
-                        print("Firebase login with Facebook failed: \(error.localizedDescription)")
-                        return
-                    }
-                    print("Logged in with Facebook")
-                    self.showSuccessAlert(message: "Logged in with Facebook successful!", onOK: {
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        if let gitHubVC = storyboard.instantiateViewController(withIdentifier: "GitHubRepositoriesViewController") as? GitHubRepositoriesViewController {
-                                self.present(gitHubVC, animated: true)
-                        }
-                })
+                self.firebaseFacebookLogin(with: tokenString)
             }
         }
     }
+
     
     @IBAction func googleButtonTapped(_ sender: Any) {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
@@ -147,7 +141,24 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+    func firebaseFacebookLogin(with token: String) {
+        let credential = FacebookAuthProvider.credential(withAccessToken: token)
+        Auth.auth().signIn(with: credential) { authResult, error in
+            if let error = error {
+                print("Firebase login with Facebook failed: \(error.localizedDescription)")
+                return
+            }
+
+            print("✅ Logged in with Facebook")
+            self.showSuccessAlert(message: "Logged in with Facebook successful!", onOK: {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let gitHubVC = storyboard.instantiateViewController(withIdentifier: "GitHubRepositoriesViewController") as? GitHubRepositoriesViewController {
+                    self.present(gitHubVC, animated: true)
+                }
+            })
+        }
+    }
+
     func clearLoginFields() {
         self.emailTextField.text = ""
         self.passwordTextField.text = ""
