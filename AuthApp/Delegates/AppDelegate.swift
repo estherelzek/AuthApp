@@ -10,18 +10,13 @@ import CoreData
 import Firebase
 import FBSDKCoreKit
 import GoogleSignIn
-import FBSDKCoreKit
-
-import UIKit
-import FBSDKCoreKit
 import FirebaseCore
-import GoogleSignIn
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Application Lifecycle
-    
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -40,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Handle URL Opens for Facebook and Google
-
     func application(_ app: UIApplication,
                      open url: URL,
                      options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -55,7 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: - UISceneSession Lifecycle
-
     func application(_ application: UIApplication,
                      configurationForConnecting connectingSceneSession: UISceneSession,
                      options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -65,11 +58,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Nothing needed here for now
     }
 
     // MARK: - Core Data Stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "AuthApp")
         container.loadPersistentStores { storeDescription, error in
@@ -81,7 +72,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving Support
-
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

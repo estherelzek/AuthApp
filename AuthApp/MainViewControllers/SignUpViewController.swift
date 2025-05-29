@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-
+// MARK: - SignUp View Controller
 class SignUpViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -17,6 +17,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var togglePasswordButton: UIButton!
     @IBOutlet weak var toggleConfirmPasswordButton: UIButton!
+    
     var isPasswordVisible = false
     var isConfirmPasswordVisible = false
     
@@ -24,6 +25,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    // MARK: - Password Visibility
     @IBAction func togglePasswordVisibility(_ sender: Any) {
         isPasswordVisible.toggle()
         passwordTextField.isSecureTextEntry = !isPasswordVisible
@@ -36,6 +38,7 @@ class SignUpViewController: UIViewController {
         togglePasswordButton.setImage(UIImage(systemName: imageName), for: .normal)
     }
     
+    // MARK: - Confirm Password Visibility
     @IBAction func toggleConfirmPasswordVisibility(_ sender: Any) {
         isConfirmPasswordVisible.toggle()
         confirmPasswordTextField.isSecureTextEntry = !isConfirmPasswordVisible
@@ -48,6 +51,7 @@ class SignUpViewController: UIViewController {
         toggleConfirmPasswordButton.setImage(UIImage(systemName: imageName), for: .normal)
     }
     
+    // MARK: - sign Up Button
     @IBAction func signUpButtonTapped(_ sender: Any) {
         guard let email = emailTextField.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty,
@@ -81,6 +85,7 @@ class SignUpViewController: UIViewController {
         }
     }
 
+    // MARK: - Login Button
     @IBAction func returnToLoginButtonTapped(_ sender: Any) {
         if let loginVC = self.presentingViewController as? ViewController {
             loginVC.clearLoginFields()

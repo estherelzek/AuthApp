@@ -12,7 +12,7 @@ import FacebookCore
 import GoogleSignIn
 import Firebase
 
-
+// MARK: - Login ViewController
 class ViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
@@ -20,16 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var togglePasswordButton: UIButton!
     
     var isPasswordVisible = false
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
 
-    }
-
+    // MARK: - Password Visibility
     @IBAction func togglePasswordVisibility(_ sender: Any) {
         isPasswordVisible.toggle()
         passwordTextField.isSecureTextEntry = !isPasswordVisible
@@ -43,6 +35,7 @@ class ViewController: UIViewController {
            
     }
     
+    // MARK: - Sign In Button
     @IBAction func SignInButtonTapped(_ sender: Any) {
         guard let email = emailTextField.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty else {
@@ -72,36 +65,34 @@ class ViewController: UIViewController {
         }
     }
 
+    // MARK: - SignUp Button
     @IBAction func navigatToSignUpScreenTapped(_ sender: Any) {
         let signUpVC = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         present(signUpVC, animated: true)
     }
     
+    // MARK: - facebook Button
     @IBAction func facebookButtonTapped(_ sender: Any) {
         if let accessToken = AccessToken.current {
-            // User is already logged in to Facebook, use existing token
             print("Using existing Facebook session")
             firebaseFacebookLogin(with: accessToken.tokenString)
         } else {
-            // Prompt user to log in
             let loginManager = LoginManager()
             loginManager.logIn(permissions: ["email"], from: self) { result, error in
                 if let error = error {
                     print("Facebook login failed: \(error.localizedDescription)")
                     return
                 }
-
                 guard let tokenString = AccessToken.current?.tokenString else {
                     print("No Facebook access token")
                     return
                 }
-
                 self.firebaseFacebookLogin(with: tokenString)
             }
         }
     }
 
-    
+    // MARK: - google Button
     @IBAction func googleButtonTapped(_ sender: Any) {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
         let config = GIDConfiguration(clientID: clientID)
@@ -129,7 +120,7 @@ class ViewController: UIViewController {
                     print("Firebase login with Google failed: \(error.localizedDescription)")
                     return
                 }
-                
+        
                 print("✅ Google sign-in success")
                 self.showSuccessAlert(message: "Logged in with Google successful!", onOK: {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -141,6 +132,8 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: - firebase Facebook Login handeling
     func firebaseFacebookLogin(with token: String) {
         let credential = FacebookAuthProvider.credential(withAccessToken: token)
         Auth.auth().signIn(with: credential) { authResult, error in
@@ -159,6 +152,7 @@ class ViewController: UIViewController {
         }
     }
 
+    // MARK: - clear Login Fields
     func clearLoginFields() {
         self.emailTextField.text = ""
         self.passwordTextField.text = ""

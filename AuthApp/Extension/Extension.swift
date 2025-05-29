@@ -31,7 +31,6 @@ extension GitHubRepositoriesViewController {
     }
 
 }
-import UIKit
 
 extension UIViewController {
     func showErrorAlert(message: String, title: String = "Error") {
@@ -43,10 +42,12 @@ extension UIViewController {
             self.present(alertController, animated: true)
         }
     }
+    
      func isValidEmail(_ email: String) -> Bool {
         let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: email)
     }
+    
     func showSuccessAlert(title: String = " ✅ Success", message: String, onOK: @escaping () -> Void) {
             let alert = UIAlertController(title: title,
                                           message: message,

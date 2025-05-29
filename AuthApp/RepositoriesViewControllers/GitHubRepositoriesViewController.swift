@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - GitHub Repositories View Controller
 class GitHubRepositoriesViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -55,7 +56,8 @@ extension GitHubRepositoriesViewController: UITableViewDataSource, UITableViewDe
         cell.detailTextLabel?.text = repo.description ?? "No description"
         return cell
     }
-
+    
+    // MARK: - scroll function handeling
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height

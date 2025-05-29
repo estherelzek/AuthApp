@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - GitHub Repositories ViewModel
 class GitHubRepositoriesViewModel {
     
     var repositories: [Repository] = []
@@ -16,6 +17,7 @@ class GitHubRepositoriesViewModel {
     var onDataUpdated: (() -> Void)?
     var onError: ((String) -> Void)?
 
+    // MARK: - fetc hRepositories function
     func fetchRepositories(reset: Bool) {
         guard !isLoading else { return }
         isLoading = true
