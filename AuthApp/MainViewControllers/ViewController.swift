@@ -17,6 +17,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var togglePasswordButton: UIButton!
+    
+    var isPasswordVisible = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,18 @@ class ViewController: UIViewController {
 
     }
 
+    @IBAction func togglePasswordVisibility(_ sender: Any) {
+        isPasswordVisible.toggle()
+        passwordTextField.isSecureTextEntry = !isPasswordVisible
+        if let existingText = passwordTextField.text, isPasswordVisible {
+                   passwordTextField.text = ""
+                   passwordTextField.text = existingText
+               }
+
+               let imageName = isPasswordVisible ? "eye" : "eye.slash"
+               togglePasswordButton.setImage(UIImage(systemName: imageName), for: .normal)
+           
+    }
     
     @IBAction func SignInButtonTapped(_ sender: Any) {
         guard let email = emailTextField.text, !email.isEmpty,
