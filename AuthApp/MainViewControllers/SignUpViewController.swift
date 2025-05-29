@@ -24,18 +24,6 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func toggleConfirmPasswordVisibility(_ sender: Any) {
-        isConfirmPasswordVisible.toggle()
-        confirmPasswordTextField.isSecureTextEntry = !isConfirmPasswordVisible
-                
-        if let existingText = confirmPasswordTextField.text, isConfirmPasswordVisible {
-            confirmPasswordTextField.text = ""
-            confirmPasswordTextField.text = existingText
-        }
-        let imageName = isConfirmPasswordVisible ? "eye" : "eye.slash"
-        toggleConfirmPasswordButton.setImage(UIImage(systemName: imageName), for: .normal)
-    }
-    
     @IBAction func togglePasswordVisibility(_ sender: Any) {
         isPasswordVisible.toggle()
         passwordTextField.isSecureTextEntry = !isPasswordVisible
@@ -46,6 +34,18 @@ class SignUpViewController: UIViewController {
         }
         let imageName = isPasswordVisible ? "eye" : "eye.slash"
         togglePasswordButton.setImage(UIImage(systemName: imageName), for: .normal)
+    }
+    
+    @IBAction func toggleConfirmPasswordVisibility(_ sender: Any) {
+        isConfirmPasswordVisible.toggle()
+        confirmPasswordTextField.isSecureTextEntry = !isConfirmPasswordVisible
+                
+        if let existingText = confirmPasswordTextField.text, isConfirmPasswordVisible {
+            confirmPasswordTextField.text = ""
+            confirmPasswordTextField.text = existingText
+        }
+        let imageName = isConfirmPasswordVisible ? "eye" : "eye.slash"
+        toggleConfirmPasswordButton.setImage(UIImage(systemName: imageName), for: .normal)
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
@@ -81,7 +81,6 @@ class SignUpViewController: UIViewController {
         }
     }
 
-    
     @IBAction func returnToLoginButtonTapped(_ sender: Any) {
         if let loginVC = self.presentingViewController as? ViewController {
             loginVC.clearLoginFields()
